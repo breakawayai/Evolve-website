@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Evolve Data Center Solutions — Homepage Concept B</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{--red:#D8202A;--w:rgba(240,240,250,1);--w90:rgba(240,240,250,.9);--w70:rgba(240,240,250,.7);--w50:rgba(240,240,250,.5);--w30:rgba(240,240,250,.3);--w15:rgba(240,240,250,.15);--w10:rgba(240,240,250,.1);--f:"Barlow",Arial,sans-serif;--m:"Roboto Mono",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#000;color:var(--w);font-family:var(--f);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}ul,ol{list-style:none}img{display:block}
+.frame{width:min(1400px,100% - 3rem);margin-inline:auto}
+h1,h2{text-transform:uppercase;font-weight:700;letter-spacing:.02em;line-height:.95}
+h1{font-size:clamp(2.8rem,7vw,5.6rem)}
+h2{font-size:clamp(2.2rem,4.4vw,3.4rem)}
+p.d{font-size:1.05rem;max-width:520px;color:var(--w90);margin:1.1rem 0 1.5rem}
+.cta{display:inline-flex;align-items:center;gap:.7rem;text-transform:uppercase;font-weight:700;letter-spacing:.09em;font-size:.85rem;position:relative;padding-bottom:.4rem}
+.cta::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--w50);transition:.3s}
+.cta:hover::after{background:var(--red)}
+.cta svg{width:14px;height:14px;transition:transform .3s}
+.cta:hover svg{transform:translateX(5px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-transform:uppercase;font-weight:700;letter-spacing:.09em;font-size:.8rem;padding:.8rem 1.3rem;border:1px solid var(--w70);transition:.25s}
+.btn:hover{background:var(--w);color:#000}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red:hover{background:#fff;border-color:#fff;color:#000}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;height:88px;background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,0))}
+header .frame{display:flex;align-items:center;justify-content:space-between;height:100%}
+header .logo img{height:40px;width:auto}
+header nav ul{display:flex;gap:24px;align-items:center}
+header nav a{text-transform:uppercase;font-weight:700;letter-spacing:.09em;font-size:.813rem;color:var(--w90);transition:.2s;position:relative;padding:6px 0}
+header nav a:hover{color:var(--w)}
+header nav li{position:relative}
+.dd{position:absolute;top:100%;left:-16px;min-width:260px;background:rgba(10,10,12,.96);border:1px solid var(--w10);padding:10px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;backdrop-filter:blur(10px)}
+header nav li:hover .dd{opacity:1;visibility:visible;transform:none}
+.dd a{display:flex;justify-content:space-between;gap:1rem;padding:9px 16px!important;text-transform:none;letter-spacing:0;font-weight:500;font-size:.95rem}
+.dd a:hover{background:var(--w10)}
+.dd a span{font-family:var(--m);font-size:.7rem;color:var(--w50)}
+.dd .hd{padding:6px 16px 4px;font-family:var(--m);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
+header .right{display:flex;align-items:center;gap:18px}
+.emg{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1;font-family:var(--m);text-transform:uppercase;letter-spacing:.12em;padding:.45rem .9rem;border:1px solid var(--red);background:rgba(0,0,0,.45);transition:.2s}.emg span{font-size:.66rem;color:#ff8a90;font-weight:600}.emg b{font-size:1.15rem;font-weight:500;color:var(--w)}.emg:hover{background:var(--red)}.emg:hover span{color:#fff}
+@media(max-width:960px){.emg{padding:.35rem .6rem}.emg span{font-size:.55rem}.emg b{font-size:.95rem}}
+@media(max-width:400px){.emg span{display:none}.emg b{font-size:.85rem}}
+.burger{display:none;background:0;border:0;color:var(--w);text-transform:uppercase;font-weight:700;letter-spacing:.09em;font-size:.813rem;cursor:pointer}
+.mnav{position:fixed;inset:0;background:#000;z-index:49;padding:110px 1.5rem 2rem;display:none;overflow:auto}
+.mnav.on{display:block}
+.mnav .hd{font-family:var(--m);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin:1.4rem 0 .4rem}
+.mnav a{display:block;padding:.7rem 0;border-bottom:1px solid var(--w10);font-size:1.3rem;text-transform:uppercase;font-weight:700;letter-spacing:.04em}
+@media(max-width:960px){header nav,header .btn{display:none}.burger{display:block}}
+
+/* tiles */
+.tile{position:relative;min-height:max(100svh,760px);overflow:hidden;display:flex}
+.tile .bg{position:absolute;inset:0}
+.tile.dim .bg img{opacity:.38}.tile.dim2 .bg img{opacity:.6}
+.tile .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 4s ease-out}
+.tile.in .bg img{transform:scale(1)}
+.tile .grad{position:absolute;inset:0}
+.g-left{background:linear-gradient(90deg,rgba(0,0,0,.75) 0,rgba(0,0,0,.25) 50%,rgba(0,0,0,0) 80%)}
+.g-right{background:linear-gradient(270deg,rgba(0,0,0,.75) 0,rgba(0,0,0,.25) 50%,rgba(0,0,0,0) 80%)}
+.g-bottom{background:linear-gradient(0deg,rgba(0,0,0,.85) 0,rgba(0,0,0,.3) 45%,rgba(0,0,0,0) 75%)}
+.tile .frame{position:relative;z-index:2;display:flex;flex-direction:column;width:min(1400px,100% - 3rem);padding:120px 0 80px}
+.pos-lm{justify-content:center;align-items:flex-start}
+.pos-rt{justify-content:flex-start;align-items:flex-end;text-align:right}
+.pos-rt p.d{margin-left:auto}
+.pos-lb{justify-content:flex-end;align-items:flex-start}
+.pos-cb{justify-content:flex-end;align-items:center;text-align:center}
+.pos-cb p.d{margin-inline:auto}
+.tag{font-family:var(--m);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--w70);margin-bottom:1rem;display:flex;gap:.6rem;align-items:center}
+.tag::before{content:"";width:28px;height:1px;background:var(--red)}
+.pos-rt .tag{flex-direction:row-reverse}
+.pos-cb .tag::before{display:none}
+.a{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.tile.in .a{opacity:1;transform:none}
+.tile.in .a:nth-child(2){transition-delay:.12s}.tile.in .a:nth-child(3){transition-delay:.24s}.tile.in .a:nth-child(4){transition-delay:.36s}
+.scroll{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:3;font-family:var(--m);font-size:.65rem;letter-spacing:.2em;color:var(--w50);text-transform:uppercase}
+.scroll::after{content:"";display:block;width:1px;height:36px;background:var(--w50);margin:8px auto 0;animation:dn 1.8s infinite}
+@keyframes dn{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* lifecycle tile */
+.life .frame{justify-content:center}
+.lc{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:3rem;position:relative}
+.lc::before{content:"";position:absolute;top:9px;left:0;right:0;height:1px;background:var(--w15)}
+.lc::after{content:"";position:absolute;top:9px;left:0;height:1px;background:var(--red);width:0;transition:width 2.4s cubic-bezier(.2,.7,.2,1)}
+.tile.in .lc::after{width:100%}
+.lc li{position:relative;padding:34px 24px 0 0}
+.lc li::before{content:"";position:absolute;top:0;left:0;width:19px;height:19px;border-radius:50%;border:1px solid var(--w30);background:#000;transition:.4s}
+.tile.in .lc li::before{border-color:var(--red);background:var(--red);box-shadow:0 0 0 6px rgba(216,32,42,.2)}
+.tile.in .lc li:nth-child(1)::before{transition-delay:.1s}.tile.in .lc li:nth-child(2)::before{transition-delay:.6s}.tile.in .lc li:nth-child(3)::before{transition-delay:1.1s}.tile.in .lc li:nth-child(4)::before{transition-delay:1.6s}.tile.in .lc li:nth-child(5)::before{transition-delay:2.1s}
+.lc b{display:block;font-family:var(--m);font-size:.7rem;color:var(--w50);letter-spacing:.15em}
+.lc h3{text-transform:uppercase;font-size:1.5rem;letter-spacing:.03em;margin:.3rem 0 .4rem}
+.lc p{font-size:.92rem;color:var(--w70);max-width:230px}
+.lc a{display:inline-block;margin-top:.8rem;font-family:var(--m);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--w90);border-bottom:1px solid var(--w30)}
+.lc a:hover{border-color:var(--red)}
+@media(max-width:960px){.lc{grid-template-columns:1fr 1fr;gap:1.4rem}.lc::before,.lc::after{display:none}.lc li{padding-top:30px}}
+@media(max-width:560px){.lc{grid-template-columns:1fr}}
+
+/* numbers tile */
+.num .frame{justify-content:center;align-items:flex-start}
+.ng{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem;width:100%;border-top:1px solid var(--w15);padding-top:2rem}
+.ng b{display:block;font-family:var(--m);font-weight:500;font-size:clamp(2rem,4.6vw,4.2rem);line-height:1;letter-spacing:-.02em}
+.ng span{display:block;font-family:var(--m);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--w50);margin-top:.6rem}
+@media(max-width:800px){.ng{grid-template-columns:1fr 1fr}}
+
+/* types strip inside tile */
+.types .frame{justify-content:flex-end}
+.tg{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--w15);border:1px solid var(--w15);margin-top:2.5rem;width:100%}
+.tg a{background:rgba(0,0,0,.6);padding:1.2rem 1.1rem;backdrop-filter:blur(6px);transition:.25s;min-height:130px;display:flex;flex-direction:column;justify-content:space-between}
+.tg a:hover{background:rgba(216,32,42,.85)}
+.tg b{text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem}
+.tg span{font-family:var(--m);font-size:.68rem;color:var(--w70);letter-spacing:.08em}
+.tg a:hover span{color:#fff}
+@media(max-width:960px){.tg{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tg{grid-template-columns:1fr}.tg a{min-height:0}}
+
+/* contact */
+.con .frame{justify-content:center;align-items:center;text-align:center}
+.con .row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem}
+.con .ph{font-family:var(--m);font-size:.8rem;letter-spacing:.12em;color:var(--w70);margin-top:2.2rem}
+
+footer{padding:40px 0;border-top:1px solid var(--w10)}
+footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:var(--m);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--w50)}
+footer a:hover{color:var(--w)}
+footer ul{display:flex;gap:1.4rem;flex-wrap:wrap}
+.pill{position:fixed;left:1rem;bottom:1rem;z-index:60;background:var(--red);color:#fff;font-family:var(--m);letter-spacing:.14em;text-transform:uppercase;font-size:.65rem;padding:.4rem .7rem}
+
+/* hero video + HUD */
+.hero .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hud{position:absolute;right:max(1.5rem,calc((100% - 1400px)/2));bottom:28px;z-index:3;font-family:var(--m);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--w70);display:flex;gap:1.2rem;align-items:center}
+.hud b{color:var(--w);font-weight:500}
+.hud .bar{width:120px;height:2px;background:var(--w15);position:relative;overflow:hidden}
+.hud .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--red);width:0}
+.hud .rp{cursor:pointer;border:1px solid var(--w30);padding:3px 8px;transition:.2s}
+.hud .rp:hover{border-color:var(--w);color:var(--w)}
+@media(max-width:700px){.hud{display:none}}
+/* exploded module chapter */
+.mod .frame{justify-content:center}
+.mod .g{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;align-items:center}
+.mod figure img{width:100%;height:auto}
+.lay{display:grid;border-top:1px solid var(--w15);margin:1.6rem 0 1.8rem;max-width:520px}
+.lay div{display:grid;grid-template-columns:34px 1fr auto;gap:.8rem;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--w15);font-size:.9rem;color:var(--w90)}
+.lay i{font-family:var(--m);font-style:normal;font-size:.66rem;color:var(--red);letter-spacing:.1em}
+.lay span{font-family:var(--m);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--w50)}
+@media(max-width:960px){.mod .g{grid-template-columns:1fr;gap:1.5rem}}
+
+/* nov6: header + legibility */header{transition:background .3s,height .3s,border-color .3s;border-bottom:1px solid transparent}header.sc{background:rgba(0,0,0,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);height:72px;border-bottom-color:var(--w10)}header.sc .logo img{height:34px}.tile h1,.tile h2,.tile .d,.tile .tick,.tile .tag,.tile .ph,.tile .hud{text-shadow:0 1px 2px rgba(0,0,0,.65),0 6px 28px rgba(0,0,0,.6)}.g-bottom{background:linear-gradient(0deg,rgba(0,0,0,.94) 0,rgba(0,0,0,.6) 38%,rgba(0,0,0,.2) 68%,rgba(0,0,0,0) 100%)}.g-left{background:linear-gradient(90deg,rgba(0,0,0,.88) 0,rgba(0,0,0,.55) 42%,rgba(0,0,0,.15) 78%,rgba(0,0,0,0) 100%)}.tile .bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.16);pointer-events:none}.tick{color:var(--w70);font-size:.74rem}.tick b{font-size:.9rem}.tag{color:var(--w90)}.scroll{color:var(--w70)}.ph{color:var(--w90)}.hud{color:var(--w90)}.note{color:var(--w70)}</style>
+</head>
+<body>
+<header>
+ <div class="frame">
+  <a class="logo" href="/"><img src="img/evolve-logo-white-440.png" alt="Evolve"></a>
+  <nav><ul>
+   <li><a href="#lifecycle">Lifecycle</a><div class="dd"><div class="hd">Five stages</div><a href="/lifecycle/plan/">Plan<span>01</span></a><a href="/lifecycle/design/">Design<span>02</span></a><a href="/lifecycle/build/">Build<span>03</span></a><a href="/lifecycle/power/">Power<span>04</span></a><a href="/lifecycle/maintain/">Maintain<span>05</span></a></div></li>
+   <li><a href="#types">Data Centers</a><div class="dd"><div class="hd">Facility types</div><a href="/data-centers/modular/">Modular<span>Shop-built</span></a><a href="/data-centers/hyperscale/">Hyperscale<span>Campus</span></a><a href="/data-centers/ai/">AI / HPC<span>Liquid-cooled</span></a><a href="/data-centers/edge/">Edge<span>Single module</span></a><a href="/data-centers/retrofit/">Colocation<span>Operator</span></a><div class="hd">Project types</div><a href="/data-centers/hyperscale/">Greenfield</a><a href="/data-centers/retrofit/">Brownfield &amp; retrofit</a></div></li>
+   <li><a href="/markets/">Markets</a><div class="dd"><div class="hd">Facility markets</div><a href="/data-centers/ai/">AI data centers<span>Growth</span></a><a href="/data-centers/hyperscale/">Hyperscale<span>Growth</span></a><a href="/data-centers/modular/">Modular<span>Growth</span></a><a href="/data-centers/retrofit/">Colocation<span>Operating</span></a><a href="/markets/enterprise/">Enterprise<span>Operating</span></a><a href="/data-centers/edge/">Edge<span>Growth</span></a></div></li><li><a href="/insights/">Insights</a><div class="dd"><div class="hd">Guides</div><a href="/insights/data-center-site-selection-power-planning/">Site Selection & Power Planning<span></span></a><a href="/insights/responsible-data-center-development/">Responsible Development<span></span></a><a href="/insights/modular-vs-traditional-data-center-delivery/">Modular vs. Traditional Delivery<span></span></a><a href="/insights/hyperscale-campus-phasing/">Hyperscale Campus Phasing<span></span></a><a href="/insights/ai-data-center-infrastructure-planning/">AI Infrastructure Planning<span></span></a><a href="/insights/data-center-commissioning-checklist/">Commissioning Checklist<span></span></a><a href="/insights/data-center-preventive-maintenance/">Preventive Maintenance Guide<span></span></a><a href="/insights/data-center-monitoring-vs-dcim/">Monitoring vs. DCIM<span></span></a></div></li><li><a href="/about/">Company</a><div class="dd"><a href="/about/">About</a><a href="/about/leadership/">Leadership</a><a href="/contact/">Contact</a><a href="/locations/">Locations</a><a href="/support/">Customer support</a></div></li>
+  </ul></nav>
+  <div class="right"><a class="emg" href="tel:+18323750099"><span>24/7 Emergency</span><b>832-375-0099</b></a><a class="btn red" href="/start-a-project/">Start a project</a><button class="burger" id="burger">Menu</button></div>
+ </div>
+</header>
+<nav class="mnav" id="mnav">
+ <div class="hd">Lifecycle</div><a href="/lifecycle/plan/">Plan</a><a href="/lifecycle/design/">Design</a><a href="/lifecycle/build/">Build</a><a href="/lifecycle/power/">Power</a><a href="/lifecycle/maintain/">Maintain</a>
+ <div class="hd">Data centers</div><a href="/data-centers/modular/">Modular</a><a href="/data-centers/hyperscale/">Hyperscale</a><a href="/data-centers/ai/">AI / HPC</a><a href="/data-centers/edge/">Edge</a><a href="/data-centers/retrofit/">Colocation</a>
+ <div class="hd">Markets</div><a href="/data-centers/ai/">AI data centers</a><a href="/data-centers/hyperscale/">Hyperscale</a><a href="/data-centers/modular/">Modular</a><a href="/data-centers/retrofit/">Colocation</a><a href="/markets/enterprise/">Enterprise</a><a href="/data-centers/edge/">Edge</a><div class="hd">Insights</div><a href="/insights/">All guides</a><div class="hd">Company</div><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/start-a-project/">Start a project</a>
+</nav>
+
+<!-- 1 hero -->
+<section class="tile in hero"><div class="bg"><video id="tl" muted playsinline preload="auto" poster="img/timelapse-poster-v7.jpg"></video></div><div class="grad g-left"></div>
+ <div class="frame pos-lm"><div class="tag a">Evolve Data Center Solutions · Houston, Texas</div><h1 class="a">Building the infrastructure<br>of intelligence.</h1><p class="d a">The facilities behind AI, cloud and the connected world, planned, designed, built, powered and maintained by one team. Only data centers. Since 2004.</p><a class="cta a" href="#lifecycle">See how we build <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+ <div class="hud"><span>T+<b id="hudt">00:00</b></span><span>Stage <b id="huds">01</b> · <b id="hudn">Site cleared</b></span><span class="bar"><i id="hudb"></i></span><span class="rp" id="replay">Replay</span></div>
+ <div class="scroll">Scroll</div>
+</section>
+
+<!-- 2 lifecycle -->
+<section class="tile life dim" id="lifecycle"><div class="bg"><img src="img/evolve-fabrication-shop-floor-structural-steel-overhead-crane-1536.jpg" alt=""></div><div class="grad g-bottom"></div>
+ <div class="frame"><div class="tag a">The lifecycle</div><h2 class="a">Five stages.<br>Zero handoffs.</h2><p class="d a">The same team plans, designs, builds, powers and maintains the facility. Nothing gets thrown over a wall, and there is one number to call for all of it.</p>
+ <ol class="lc a">
+  <li><b>01</b><h3>Plan</h3><p>What can be built, powered and paid for, before you sign.</p><a href="/lifecycle/plan/">Explore</a></li>
+  <li><b>02</b><h3>Design</h3><p>Engineered by the people who have to build it.</p><a href="/lifecycle/design/">Explore</a></li>
+  <li><b>03</b><h3>Build</h3><p>Self-performed fabrication, field work and commissioning.</p><a href="/lifecycle/build/">Explore</a></li>
+  <li><b>04</b><h3>Power</h3><p>Generation and critical power, decided with the facility.</p><a href="/lifecycle/power/">Explore</a></li>
+  <li><b>05</b><h3>Maintain</h3><p>Monitoring and 24/7 response from the crew that built it.</p><a href="/lifecycle/maintain/">Explore</a></li>
+ </ol></div>
+</section>
+
+<!-- 3 modular -->
+<section class="tile mod" id="modular"><div class="bg"></div>
+ <div class="frame"><div class="g">
+  <div><div class="tag a">Modular</div><h2 class="a">Built to be<br>built again.</h2><p class="d a">Structure, racks, cooling, power and fire protection resolved in our Houston shop, under the same crane, by the same crew. Module nine is module one.</p>
+   <div class="lay a"><div><i>L5</i>Insulated roof and wall panels<span>Shop</span></div><div><i>L4</i>Fire suppression and cable tray<span>Shop</span></div><div><i>L3</i>Rack rows with in-row cooling<span>Shop</span></div><div><i>L2</i>Raised floor and power distribution<span>Shop</span></div><div><i>L1</i>Structural steel skid<span>Shop</span></div><div><i>L0</i>Pad, stub-ups, utility and generator tie-in<span>Site</span></div></div>
+   <a class="cta a" href="/data-centers/modular/">Modular data centers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  <figure class="a"><img src="img/module-exploded-v2.jpg" alt="Exploded view of an Evolve prefabricated data center module"></figure>
+ </div></div>
+</section>
+
+<!-- 4 hyperscale -->
+<section class="tile"><div class="bg"><img src="img/hyperscale-aerial-orig.jpg" alt=""></div><div class="grad g-left"></div>
+ <div class="frame pos-lb"><div class="tag a">Hyperscale</div><h2 class="a">Campuses engineered<br>for the next decade.</h2><p class="d a">Phasing, utility strategy and procurement decided together before the first slab, so phase one never boxes in phase two.</p><a class="cta a" href="/data-centers/hyperscale/">Hyperscale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</section>
+
+<!-- 5 AI -->
+<section class="tile"><div class="bg"><img src="img/ai-hall-orig.jpg" alt=""></div><div class="grad g-right"></div>
+ <div class="frame pos-rt"><div class="tag a">AI / HPC</div><h2 class="a">Powering the age<br>of intelligence.</h2><p class="d a">AI workloads push electrical, thermal and structural limits at the same time. We design the hall, the power and the cooling as one machine.</p><a class="cta a" href="/data-centers/ai/">AI data centers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</section>
+
+<!-- 6 power -->
+<section class="tile"><div class="bg"><img src="img/power-yard-v2.jpg" alt=""></div><div class="grad g-left"></div>
+ <div class="frame pos-lm"><div class="tag a">Power</div><h2 class="a">Energy where the grid<br>can't keep up.</h2><p class="d a">On-site generation decided with the design, not after it. 5.3+ GW deployed, and more Evolution Series units installed and supported in Texas than anyone.</p><a class="cta a" href="/lifecycle/power/">Power generation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</section>
+
+<!-- 7 maintain -->
+<section class="tile dim2"><div class="bg"><img src="img/evolve-command-center-monitoring-room-1536.jpg" alt=""></div><div class="grad g-bottom"></div>
+ <div class="frame pos-cb"><div class="tag a">Maintain</div><h2 class="a">Mission control,<br>for the life of the facility.</h2><p class="d a">Monitoring, preventive maintenance and 24/7 response from the crew that built it, years after turnover.</p><a class="cta a" href="/lifecycle/maintain/">Service &amp; maintenance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</section>
+
+<!-- 8 types + numbers -->
+<section class="tile types num dim" id="types"><div class="bg"><img src="img/cranes-over-building-orig.jpg" alt=""></div><div class="grad g-bottom"></div>
+ <div class="frame"><div class="tag a">The record</div><h2 class="a">Nothing else<br>since 2004.</h2>
+ <div class="ng a"><div><b data-n="2200" data-s="+">0</b><span>Mission-critical projects</span></div><div><b data-n="5.3" data-d="1" data-s="+ GW">0</b><span>Power deployed</span></div><div><b data-n="20" data-s="+">0</b><span>Years, data centers only</span></div><div><b data-n="0" data-s="">0</b><span>Recordables since 2010</span></div></div>
+ <div class="tg a">
+  <a href="/data-centers/modular/"><b>Modular</b><span>Shop-built · site-set</span></a>
+  <a href="/data-centers/hyperscale/"><b>Hyperscale</b><span>Multi-phase campus</span></a>
+  <a href="/data-centers/ai/"><b>AI / HPC</b><span>Liquid-cooled density</span></a>
+  <a href="/data-centers/edge/"><b>Edge</b><span>Compute at the load</span></a>
+  <a href="/data-centers/retrofit/"><b>Retrofit</b><span>Live-site expansion</span></a>
+ </div></div>
+</section>
+
+<!-- 9 contact -->
+<section class="tile con"><div class="bg"><img src="img/hero-studio-module-v2.jpg" alt=""></div><div class="grad g-bottom"></div>
+ <div class="frame"><div class="tag a">Next step</div><h2 class="a">Join the build.</h2><p class="d a">Send the facility type, target capacity, site status and timeline. You get a straight answer on fit, and the next decision.</p>
+ <div class="row a"><a class="btn red" href="/start-a-project/">Tell us about your facility</a><a class="btn" href="/contact/">Contact</a></div>
+ <p class="ph a">24/7 service · 832-375-0099 · support@evolveincorporated.com</p></div>
+</section>
+
+<footer><div class="frame"><span>© 2026 Evolve Data Center Solutions · Houston, TX · Charleston, SC</span><ul><li><a href="/lifecycle/plan/">Lifecycle</a></li><li><a href="/data-centers/modular/">Data centers</a></li><li><a href="/about/">Company</a></li><li><a href="/support/">Support</a></li></ul><span>Choice Partners #25/033MR-15</span></div></footer>
+<div class="pill">Concept B · Review only</div>
+<script>
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+burger.onclick=()=>{mnav.classList.toggle('on');burger.textContent=mnav.classList.contains('on')?'Close':'Menu'};
+const hd=document.querySelector('header'),onS=()=>hd.classList.toggle('sc',scrollY>40);onS();addEventListener('scroll',onS,{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.35});
+document.querySelectorAll('.tile').forEach(t=>io.observe(t));
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const b=e.target,n=+b.dataset.n,s=b.dataset.s||'',d=+(b.dataset.d||0),t0=performance.now();
+(function f(now){const p=Math.min(1,(now-t0)/1800),v=n*(1-Math.pow(1-p,3));b.textContent=(d?v.toFixed(d):Math.round(v).toLocaleString())+s;if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+document.querySelectorAll('.ng b').forEach(b=>co.observe(b));
+// time-lapse hero
+const tl=document.getElementById('tl'),ht=document.getElementById('hudt'),hs=document.getElementById('huds'),hn=document.getElementById('hudn'),hb=document.getElementById('hudb');
+const stages=[[0,'01','Site cleared'],[3.3,'02','Foundations'],[6.6,'03','Steel'],[9.9,'04','Enclosure & power'],[13.2,'05','Substation'],[16.5,'06','Turnover']];
+if(tl){const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ tl.src=innerWidth<900?'img/timelapse-v7-720.mp4':'img/timelapse-v7.mp4';
+ if(!rm){tl.play().catch(()=>{});}
+ tl.addEventListener('timeupdate',()=>{const t=tl.currentTime,d=tl.duration||20;ht.textContent=String(Math.floor(t/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0');hb.style.width=(t/d*100)+'%';const st=stages.filter(x=>t>=x[0]).pop();hs.textContent=st[1];hn.textContent=st[2];});
+ tl.addEventListener('ended',()=>{hn.textContent='Turnover';hb.style.width='100%'});
+ document.getElementById('replay').onclick=()=>{tl.currentTime=0;tl.play()};}
+</script>
+</body>
+</html>
